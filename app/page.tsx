@@ -30,23 +30,29 @@ import {
   ExternalLink,
 } from "lucide-react";
 const stats = [
-  { label: "Публикации", value: "4", icon: FileText, color: "text-violet-400" },
-  { label: "Подписчики", value: "1.2K", icon: Users, color: "text-sky-400" },
-  { label: "Подписки", value: "89", icon: BookOpen, color: "text-emerald-400" },
-  { label: "Лайки", value: "2.3K", icon: Heart, color: "text-rose-400" },
+  { label: "Публикации", value: "9", icon: FileText, color: "text-sky-300" },
+  { label: "Подписчики", value: "998", icon: Users, color: "text-sky-400" },
+  { label: "Подписки", value: "79", icon: BookOpen, color: "text-emerald-400" },
+  { label: "Лайки", value: "9.6K", icon: Heart, color: "text-sky-200" },
 ];
 
 
 const skills = [
-  "C", "Linux", "Bash", "Тестирование", "QA",
-  "Автоматизация", "GDB", "Make"
+  "Digital art",
+  "3D",
+  "3D моделирование",
+  "Blender",
+  "Game design",
+  "UI/UX",
+  "Unity",
+  "Unreal Engine",
 ];
 
 const posts = [
-  { id: 1, title: "Основы тестирования в Linux-среде", date: "15 фев 2026", likes: 340, comments: 28, type: "article" },
-  { id: 2, title: "Bash-скрипты для автоматизации тестов", date: "8 фев 2026", likes: 520, comments: 41, type: "article" },
-  { id: 3, title: "Отладка C-кода с GDB: практические советы", date: "1 фев 2026", likes: 890, comments: 67, type: "article" },
-  { id: 4, title: "Чек-лист для ручного тестирования API", date: "22 янв 2026", likes: 210, comments: 19, type: "document" },
+  { id: 1, title: "Пайплайн digital-арта: от эскиза до финала", date: "15 фев 2026", likes: 340, comments: 28, type: "article" },
+  { id: 2, title: "Blender: быстрый блок-аут для игровых сцен", date: "8 фев 2026", likes: 520, comments: 41, type: "article" },
+  { id: 3, title: "Геймдизайн: как собрать интересный игровой цикл", date: "1 фев 2026", likes: 890, comments: 67, type: "article" },
+  { id: 4, title: "Чек-лист для ассетов: что проверить перед импортом в игру", date: "22 янв 2026", likes: 210, comments: 19, type: "document" },
 ];
 
 interface Post {
@@ -59,7 +65,7 @@ interface Post {
 
 function PostCard({ post }: { post: Post }) {
   return (
-    <Card className="bg-zinc-900/60 border-zinc-800 hover:border-zinc-600 transition-all duration-300 hover:shadow-lg hover:shadow-violet-900/10 group cursor-pointer">
+    <Card className="bg-zinc-900/60 border-zinc-800 hover:border-zinc-600 transition-all duration-300 hover:shadow-lg hover:shadow-sky-900/10 group cursor-pointer">
       <CardContent className="p-5">
         <div className="flex items-start justify-between gap-3">
           <div className="flex-1 min-w-0">
@@ -67,7 +73,7 @@ function PostCard({ post }: { post: Post }) {
               <Badge
                 variant="outline"
                 className={`text-xs border-0 px-2 py-0.5 font-medium ${
-                  post.type === "article" ? "bg-violet-500/15 text-violet-400" :
+                  post.type === "article" ? "bg-sky-500/15 text-sky-300" :
                   post.type === "media" ? "bg-sky-500/15 text-sky-400" :
                   "bg-amber-500/15 text-amber-400"
                 }`}
@@ -76,7 +82,7 @@ function PostCard({ post }: { post: Post }) {
               </Badge>
               <span className="text-xs text-zinc-500">{post.date}</span>
             </div>
-            <h3 className="text-zinc-100 font-semibold text-sm leading-snug group-hover:text-violet-300 transition-colors line-clamp-2">
+            <h3 className="text-zinc-100 font-semibold text-sm leading-snug group-hover:text-sky-200 transition-colors line-clamp-2">
               {post.title}
             </h3>
           </div>
@@ -113,38 +119,38 @@ export default function ProfilePage() {
       <div className="fixed inset-0 opacity-[0.03] pointer-events-none"
         style={{ backgroundImage: "linear-gradient(zinc 1px, transparent 1px), linear-gradient(90deg, #71717a 1px, transparent 1px)", backgroundSize: "40px 40px" }} />
 
-      <div className="fixed top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-violet-600/10 blur-[100px] pointer-events-none rounded-full" />
+      <div className="fixed top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-sky-500/10 blur-[100px] pointer-events-none rounded-full" />
 
       <div className="relative max-w-3xl mx-auto px-4 py-10 pb-0">
         <div className="mb-8">
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
             <div className="relative shrink-0">
-              <div className="absolute -inset-0.5 rounded-full bg-gradient-to-br from-violet-500 to-sky-500 opacity-80 blur-[2px]" />
+              <div className="absolute -inset-0.5 rounded-full bg-gradient-to-br from-sky-400 to-white opacity-80 blur-[2px]" />
               <Avatar className="relative w-24 h-24 border-2 border-zinc-950">
-                <AvatarImage src="https://api.dicebear.com/9.x/initials/svg?seed=QA" />
-                <AvatarFallback className="bg-zinc-800 text-zinc-200 text-2xl font-bold">QA</AvatarFallback>
+                <AvatarImage src="https://api.dicebear.com/9.x/initials/svg?seed=EO" />
+                <AvatarFallback className="bg-zinc-800 text-zinc-200 text-2xl font-bold">EO</AvatarFallback>
               </Avatar>
               <span className="absolute bottom-1 right-1 w-3.5 h-3.5 bg-emerald-500 rounded-full border-2 border-zinc-950" />
             </div>
             <div className="flex-1 min-w-0">
               <div className="flex flex-wrap items-center gap-2 mb-1">
-                <h1 className="text-2xl font-bold tracking-tight text-white">Китаев Данила</h1>
-                <Badge className="bg-violet-500/20 text-violet-300 border-violet-500/30 text-xs font-medium">QA</Badge>
+                <h1 className="text-2xl font-bold tracking-tight text-white">Иван Орлинский</h1>
+                <Badge className="bg-sky-500/20 text-sky-200 border-sky-500/30 text-xs font-medium">QA</Badge>
               </div>
-              <p className="text-zinc-400 text-sm mb-0.5">Тестировщик · C / Linux / Bash</p>
+              <p className="text-zinc-400 text-sm mb-0.5">Digital художник · 3D моделирование · Геймдизайн</p>
               <p className="text-zinc-500 text-sm mb-3 flex items-center gap-1.5">
-                <span className="text-zinc-600">@</span>dkitaev
+                <span className="text-zinc-600">@</span>Brevno45
                 <span className="mx-1 text-zinc-700">·</span>
                 <MapPin className="w-3.5 h-3.5" /> Москва, Россия
               </p>
               <p className="text-zinc-400 text-sm leading-relaxed max-w-md">
-                QA-инженер. Пишу на C, работаю в Linux, автоматизирую через Bash.
+                Digital-художник и геймдизайнер. Делаю 3D‑модели, ассеты и визуал для игр.
               </p>
             </div>
           </div>
 
           <div className="flex flex-wrap gap-2 mt-5">
-            <Button size="sm" className="bg-violet-600 hover:bg-violet-500 text-white gap-2 shadow-lg shadow-violet-900/30 h-8 text-xs font-medium">
+            <Button size="sm" className="bg-sky-500 hover:bg-sky-400 text-white gap-2 shadow-lg shadow-sky-900/30 h-8 text-xs font-medium">
               <Edit3 className="w-3.5 h-3.5" /> Редактировать профиль
             </Button>
             <Button size="sm" variant="outline" className="border-zinc-700 text-zinc-800 hover:bg-zinc-800 hover:text-white gap-2 h-8 text-xs font-medium">
@@ -172,7 +178,7 @@ export default function ProfilePage() {
             <h2 className="text-sm font-semibold text-zinc-400 uppercase tracking-widest mb-4">О себе</h2>
 
             <p className="text-zinc-300 text-sm leading-7 mb-5">
-              Тестировщик по профессии. Пишу на C, вшаренный подросток в Linux и Bash. Занимаюсь ручным и автоматизированным тестированием, использую скрипты для регрессий и CI. Умею отлаживать C-код через GDB и настраивать окружение в терминале.
+              Digital-художник по профессии. Делаю 3D‑модели и ассеты, а ещё занимаюсь геймдизайном: люблю собирать визуальный стиль и доводить идеи до играбельного результата — от скетча и прототипа до финального билда.
             </p>
             <div className="mb-5">
               <p className="text-xs text-zinc-500 font-medium uppercase tracking-wider mb-3">Навыки</p>
@@ -189,17 +195,17 @@ export default function ProfilePage() {
 
             <div className="grid sm:grid-cols-2 gap-3">
               {[
-                { icon: Mail, label: "dkitaev@ddomain.com", href: "mailto:dkitaev@ddomain.com", color: "text-violet-400" },
-                { icon: Globe, label: "dkitaev.com", href: "#", color: "text-sky-400" },
-                { icon: Twitter, label: "@dkitaev", href: "#", color: "text-sky-400" },
-                { icon: Github, label: "Kit-rid", href: "#", color: "text-zinc-400" },
-                { icon: Linkedin, label: "in/dkitaev", href: "#", color: "text-sky-500" },
+                { icon: Mail, label: "ivanakudsa@gmail.com", href: "mailto:ivanakudsa@gmail.com", color: "text-sky-300" },
+                { icon: Globe, label: "brevno45.com", href: "https://brevno45.com", color: "text-sky-400" },
+                { icon: Twitter, label: "@Brevno45", href: "https://x.com/Brevno45", color: "text-sky-400" },
+                { icon: Github, label: "brevno45", href: "https://github.com/brevno45", color: "text-zinc-300" },
+                { icon: Linkedin, label: "in/brevno45", href: "https://www.linkedin.com/in/brevno45", color: "text-sky-500" },
                 { icon: CalendarDays, label: "На платформе с 2024", href: null, color: "text-zinc-500" },
               ].map(({ icon: Icon, label, href, color }) => (
                 <div key={label} className="flex items-center gap-2.5 group">
                   <Icon className={`w-4 h-4 shrink-0 ${color}`} />
                   {href ? (
-                    <a href={href} className="text-sm text-zinc-400 hover:text-violet-300 transition-colors truncate">{label}</a>
+                    <a href={href} className="text-sm text-zinc-300 hover:text-sky-200 transition-colors truncate">{label}</a>
                   ) : (
                     <span className="text-sm text-zinc-500 truncate">{label}</span>
                   )}
@@ -220,7 +226,7 @@ export default function ProfilePage() {
               <TabsTrigger
                 key={value}
                 value={value}
-                className="flex items-center gap-1.5 text-xs data-[state=active]:bg-zinc-800 data-[state=active]:text-violet-300 text-zinc-500"
+                className="flex items-center gap-1.5 text-xs data-[state=active]:bg-zinc-800 data-[state=active]:text-sky-200 text-zinc-500"
               >
                 <Icon className="w-3.5 h-3.5" />
                 <span className="hidden sm:inline">{label}</span>
@@ -251,7 +257,7 @@ export default function ProfilePage() {
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
               <div className="flex items-center gap-2">
-                <div className="w-6 h-6 rounded-md bg-gradient-to-br from-violet-500 to-sky-500 flex items-center justify-center">
+                <div className="w-6 h-6 rounded-md bg-gradient-to-br from-sky-400 to-white flex items-center justify-center">
                   <span className="text-white text-xs font-bold">i</span>
                 </div>
                 <span className="text-sm font-semibold text-zinc-300">inlink</span>
@@ -269,7 +275,17 @@ export default function ProfilePage() {
             </div>
             <div className="flex items-center gap-1">
               {[Twitter, Github, Linkedin, Instagram, Youtube].map((Icon, i) => (
-                <a key={i} href="#" className="w-7 h-7 flex items-center justify-center rounded-md text-zinc-600 hover:text-zinc-300 hover:bg-zinc-800 transition-all">
+                <a
+                  key={i}
+                  href={[
+                    "https://x.com/Brevno45",
+                    "https://github.com/brevno45",
+                    "https://www.linkedin.com/in/brevno45",
+                    "https://instagram.com/brevno45",
+                    "https://youtube.com/@brevno45",
+                  ][i]}
+                  className="w-7 h-7 flex items-center justify-center rounded-md text-zinc-600 hover:text-zinc-300 hover:bg-zinc-800 transition-all"
+                >
                   <Icon className="w-3.5 h-3.5" />
                 </a>
               ))}
